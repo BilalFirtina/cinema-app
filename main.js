@@ -43,14 +43,18 @@ function clearSelectedSeats() {
 }
 
 function buySelectedSeats() {
-  const selectedList = getSelectedSeats();
-  selectedList.forEach((seat) => {
-    seat.classList.add("full");
-    seat.classList.remove("selected");
-  });
-  calculate();
-  saveFullSeatsIndexToStorage();
-  saveSelectedSeatsIndexToStorage();
+  if (confirm("Satın almak istiyor musunuz?")) {
+    const selectedList = getSelectedSeats();
+    selectedList.forEach((seat) => {
+      seat.classList.add("full");
+      seat.classList.remove("selected");
+    });
+    calculate();
+    saveFullSeatsIndexToStorage();
+    saveSelectedSeatsIndexToStorage();
+  } else {
+    return;
+  }
 }
 
 function getSelectedSeats() {
