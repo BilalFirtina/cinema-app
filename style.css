@@ -22,7 +22,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-.seat:hover {
+.seat:not(.full):hover {
   transform: scale(1.2);
 }
 .title {
@@ -80,6 +80,7 @@ body {
   background-color: rgb(23, 100, 42);
   border: none;
   color: #fff;
+  margin-right: 10px;
 }
 #clearButton {
   width: 80px;
@@ -108,12 +109,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.full {
-  color: rgb(237, 52, 52);
-}
 .empty {
   color: lightgray;
 }
 .selected {
   color: yellow;
+}
+.full {
+  color: rgb(237, 52, 52);
+}
+#buyButton:hover,
+#clearButton:hover {
+  cursor: pointer;
 }
